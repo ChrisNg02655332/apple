@@ -35,15 +35,41 @@ function M.setup(colors, config)
 
 		EndOfBuffer = { fg = theme.ui.bg },
 
+		-- Folded		Line used for closed folds.
+		Folded = { fg = theme.ui.special, bg = theme.ui.bg_p1 },
+		-- FoldColumn	'foldcolumn'
+		FoldColumn = { fg = theme.ui.nontext, bg = theme.ui.bg_gutter },
+
+
 		ErrorMsg = { fg = theme.diag.error },
 		WarningMsg = { fg = theme.diag.warning },
 
+		MatchParen = { fg = theme.diag.warning, bold = true },
+		ModeMsg = { fg = theme.diag.warning, bold = true },
+		MoreMsg = { fg = theme.diag.info },
+		MsgArea = vim.o.cmdheight == 0 and { link = 'StatusLine' } or { fg = theme.ui.fg_dim },
+
+		NonText = { fg = theme.ui.nontext },
 		Normal = { fg = theme.ui.fg },
+
 		NormalFloat = { fg = theme.ui.float.fg, bg = theme.ui.float.bg },
 		FloatBorder = { fg = theme.ui.float.fg_border, bg = theme.ui.float.bg_border },
-		LineNr = { fg = theme.ui.line_nr },
+
+		Pmenu = { fg = theme.ui.pmenu.fg, bg = theme.ui.pmenu.bg },
+		PmenuSel = { fg = theme.ui.pmenu.fg_sel, bg = theme.ui.pmenu.bg_sel },
+		PmenuThumb = { bg = theme.ui.pmenu.bg_thumb },
+
+		Question = { link = "MoreMsg" },
+
+		-- TODO: check this again
+		LineNr = { fg = theme.ui.fg_dim },
 		SignColumn = { fg = theme.ui.fg, bg = theme.ui.bg },
+		-- TODO: check this again
+		Structure = { fg = theme.ui.fg_dim },
 		Whitespace = { fg = theme.ui.whitespace },
+
+		-- Visual		Visual mode selection.
+		Visual = { bg = theme.ui.bg_visual },
 	}
 end
 

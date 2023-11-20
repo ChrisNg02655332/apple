@@ -13,7 +13,7 @@ function M.setup(colors, config)
 	config = config or require("solarized").config
 
 	local highlights = {}
-	for _, highlight in ipairs({ "editor", "plugins", "syntax" }) do
+	for _, highlight in ipairs({ "editor", "lsp", "plugins", "syntax" }) do
 		local mod = require("solarized..highlights." .. highlight)
 		for hl, spec in pairs(mod.setup(colors, config)) do
 			highlights[hl] = spec

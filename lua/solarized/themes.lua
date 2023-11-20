@@ -16,7 +16,7 @@ return {
 				special    = palette.violet,
 
 				float      = {
-					fg = palette.base1,
+					fg = palette.base2,
 					bg = palette.base03,
 					fg_border = palette.base00,
 					bg_border = palette.base03

@@ -67,6 +67,7 @@ function M.setup(colors, config)
 		-- TODO: check this again
 		Structure = { fg = theme.ui.fg_dim },
 		Whitespace = { fg = theme.ui.whitespace },
+		WinSeparator = { fg = theme.ui.bg_visual, bg = theme.ui.bg_dim },
 
 		-- Visual		Visual mode selection.
 		Visual = { bg = theme.ui.bg_visual },

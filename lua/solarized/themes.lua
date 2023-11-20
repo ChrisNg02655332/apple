@@ -17,9 +17,9 @@ return {
 
 				float      = {
 					fg = palette.base2,
-					bg = palette.base03,
+					bg = palette.base02,
 					fg_border = palette.base00,
-					bg_border = palette.base03
+					bg_border = palette.base02
 				},
 
 				pmenu      = {
@@ -61,7 +61,6 @@ return {
 				removed = palette.red,
 				changed = palette.yellow,
 			},
-
 		}
 	end
 }

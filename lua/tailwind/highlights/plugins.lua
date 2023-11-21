@@ -2,13 +2,13 @@ local M = {}
 
 function M.setup(colors, config)
 	local theme = colors.theme
-	config = config or require("solarized").config
+	config = config or require("tailwind").config
 
 	return {
 		-- Gitsigns
-		GitSignsAdd = { fg = theme.vcs.added, bg = theme.ui.bg_gutter },
-		GitSignsChange = { fg = theme.vcs.changed, bg = theme.ui.bg_gutter },
-		GitSignsDelete = { fg = theme.vcs.removed, bg = theme.ui.bg_gutter },
+		GitSignsAdd = { fg = theme.vcs.added },
+		GitSignsChange = { fg = theme.vcs.changed },
+		GitSignsDelete = { fg = theme.vcs.removed },
 
 		-- TreeSitter Extensions
 		TreesitterContext = { link = "Folded" },
@@ -31,7 +31,6 @@ function M.setup(colors, config)
 		-- NeoTree
 		NeoTreeDirectoryIcon = { fg = theme.syn.fun },
 		NeoTreeDirectoryName = { fg = theme.syn.fun },
-		NeoTreeDotfile = { fg = theme.ui.fg_dim00 },
 		NeoTreeRootName = { fg = theme.syn.identifier, bold = true },
 		NeoTreeModified = { link = "String" },
 		NeoTreeGitModified = { fg = theme.vcs.changed },
@@ -44,6 +43,9 @@ function M.setup(colors, config)
 		NeoTreeIndentMarker = { fg = theme.ui.bg_visual },
 		NeoTreeWinSeparator = { fg = theme.ui.bg_gutter },
 		NeoTreeMessage = { fg = theme.ui.bg_visual },
+
+		-- Floaterm
+		FloatermBorder = { fg = theme.ui.float.fg_border, bg = theme.ui.bg },
 
 		-- NeoVim                         = {},
 		healthError = { fg = theme.diag.error },

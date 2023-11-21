@@ -10,22 +10,16 @@ function M.highlight(highlights, termcolors)
 end
 
 function M.setup(colors, config)
-	config = config or require("solarized").config
+	config = config or require("tailwind").config
 
 	local highlights = {}
-	for _, highlight in ipairs({ "editor", "lsp", "plugins", "syntax" }) do
-		local mod = require("solarized..highlights." .. highlight)
+
+	for _, highlight in ipairs({ "editor", "plugins", "syntax" }) do
+		local mod = require("tailwind..highlights." .. highlight)
 		for hl, spec in pairs(mod.setup(colors, config)) do
 			highlights[hl] = spec
 		end
 	end
-
-	-- for hl, spec in pairs(config.overrides(colors)) do
-	-- 	if highlights[hl] and next(spec) then
-	-- 		highlights[hl].link = nil
-	-- 	end
-	-- 	highlights[hl] = vim.tbl_extend("force", highlights[hl] or {}, spec)
-	-- end
 
 	return highlights
 end

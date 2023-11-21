@@ -2,7 +2,7 @@ local M = {}
 
 function M.setup(colors, config)
 	local theme = colors.theme
-	config = config or require("solarized").config
+	config = config or require("tailwind").config
 
 	return {
 		Cursor = { fg = theme.ui.bg, bg = theme.ui.fg },
@@ -40,7 +40,6 @@ function M.setup(colors, config)
 		-- FoldColumn	'foldcolumn'
 		FoldColumn = { fg = theme.ui.nontext, bg = theme.ui.bg_gutter },
 
-
 		ErrorMsg = { fg = theme.diag.error },
 		WarningMsg = { fg = theme.diag.warning },
 
@@ -50,7 +49,7 @@ function M.setup(colors, config)
 		MsgArea = vim.o.cmdheight == 0 and { link = 'StatusLine' } or { fg = theme.ui.fg_dim },
 
 		NonText = { fg = theme.ui.nontext },
-		Normal = { fg = theme.ui.fg },
+		Normal = { fg = theme.ui.fg, bg = theme.ui.bg },
 
 		NormalFloat = { fg = theme.ui.float.fg, bg = theme.ui.float.bg },
 		FloatBorder = { fg = theme.ui.float.fg_border, bg = theme.ui.float.bg_border },
@@ -61,13 +60,11 @@ function M.setup(colors, config)
 
 		Question = { link = "MoreMsg" },
 
-		-- TODO: check this again
 		LineNr = { fg = theme.ui.fg_dim },
 		SignColumn = { fg = theme.ui.fg, bg = theme.ui.bg },
-		-- TODO: check this again
-		Structure = { fg = theme.ui.fg_dim },
+
 		Whitespace = { fg = theme.ui.whitespace },
-		WinSeparator = { fg = theme.ui.bg_visual, bg = theme.ui.bg_dim },
+		WinSeparator = { fg = theme.ui.bg_visual },
 
 		-- Visual		Visual mode selection.
 		Visual = { bg = theme.ui.bg_visual },

@@ -2,7 +2,7 @@ local M = {}
 
 function M.setup(colors, config)
 	local theme = colors.theme
-	config = config or require("solarized").config
+	config = config or require("tailwind").config
 
 	return {
 		Boolean = { fg = theme.syn.boolean, bold = true },
@@ -25,7 +25,6 @@ function M.setup(colors, config)
 
 		--  Keyword	any other keyword
 		Keyword = { fg = theme.syn.keyword },
-
 		Number = { fg = theme.syn.number },
 
 		--  Conditional	if, then, else, endif, switch, etc.

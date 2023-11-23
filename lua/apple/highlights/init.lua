@@ -10,12 +10,12 @@ function M.highlight(highlights, termcolors)
 end
 
 function M.setup(colors, config)
-	config = config or require("tailwind").config
+	config = config or require("apple").config
 
 	local highlights = {}
 
-	for _, highlight in ipairs({ "editor", "plugins", "syntax" }) do
-		local mod = require("tailwind..highlights." .. highlight)
+	for _, highlight in ipairs({ "editor", "syntax", "plugins" }) do
+		local mod = require("apple..highlights." .. highlight)
 		for hl, spec in pairs(mod.setup(colors, config)) do
 			highlights[hl] = spec
 		end

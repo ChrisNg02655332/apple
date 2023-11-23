@@ -1,8 +1,8 @@
 local M = {}
 
-function M.setup(colors, config)
+function M.setup(colors, _config)
 	local theme = colors.theme
-	config = config or require("tailwind").config
+	-- config = config or require("apple").config
 
 	return {
 		Cursor = { fg = theme.ui.bg, bg = theme.ui.fg },
@@ -15,10 +15,10 @@ function M.setup(colors, config)
 		DiagnosticHint = { fg = theme.diag.hint },
 		DiagnosticOk = { fg = theme.diag.ok },
 
-		DiagnosticSignError = { fg = theme.diag.error, bg = theme.ui.bg_gutter },
-		DiagnosticSignWarn = { fg = theme.diag.warning, bg = theme.ui.bg_gutter },
-		DiagnosticSignInfo = { fg = theme.diag.info, bg = theme.ui.bg_gutter },
-		DiagnosticSignHint = { fg = theme.diag.hint, bg = theme.ui.bg_gutter },
+		DiagnosticSignError = { fg = theme.diag.error, bg = theme.ui.bg },
+		DiagnosticSignWarn = { fg = theme.diag.warning, bg = theme.ui.bg },
+		DiagnosticSignInfo = { fg = theme.diag.info, bg = theme.ui.bg },
+		DiagnosticSignHint = { fg = theme.diag.hint, bg = theme.ui.bg },
 
 		DiagnosticVirtualTextError = { link = "DiagnosticError" },
 		DiagnosticVirtualTextWarn = { link = "DiagnosticWarn" },
@@ -68,6 +68,8 @@ function M.setup(colors, config)
 
 		-- Visual		Visual mode selection.
 		Visual = { bg = theme.ui.bg_visual },
+
+		htmlTag = { fg = theme.syn.string }
 	}
 end
 

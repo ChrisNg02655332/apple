@@ -1,8 +1,8 @@
 local M = {}
 
-function M.setup(colors, config)
+function M.setup(colors, _config)
 	local theme = colors.theme
-	config = config or require("tailwind").config
+	-- config = config or require("apple").config
 
 	return {
 		Boolean = { fg = theme.syn.boolean, bold = true },
